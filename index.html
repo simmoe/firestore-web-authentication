@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <meta http-equiv='X-UA-Compatible' content='ie=edge'>
+    <title>Firebase Auth Example</title>
+    <link rel='stylesheet'
+        href='https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/0.5.0/modern-normalize.min.css' />
+    <link rel='stylesheet' href='index.css'>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.5.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.5.2/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.5.2/firebase-firestore.js"></script>
+    <script src="index.js"></script>
+
+</head>
+
+<body>
+    <main>
+        <div id="status">
+            <h1>Firebase authentication</h1>
+            <p>status: not authenticated</p>
+        </div>
+        <div id="auth-sections">
+            <section id="signup-email-password">
+                <div class="form">
+                    <h2>Sign <strong>up</strong> using email/password</h2>
+                    <input required type="email" name="email" placeholder="valid email">
+                    <input minlength="8" required type="password" name="password"
+                        placeholder='choose password'>
+                    <button type="submit" id="signup-submit">sign up</button>
+                </div>
+            </section>
+    
+            <section id="login-email-password">
+                <div class="form">
+                    <h2>Sign <strong>in</strong> using email/password</h2>
+                    <input type="email" name="email" id="email" placeholder="valid email">
+                    <input type="password" name="password" id="password" placeholder="valid password">
+                    <button type="submit" id='login-submit'>log in</button>
+                </div>
+            </section>
+    
+            <section id="sign-up-with-google">
+                <div class="form">
+                    <button>use google to sign up</button>
+                </div>
+            </section>
+    
+            <section id="sign-in-with-google">
+                <div class="form">
+                    <button>use google to sign in</button>
+            </section>
+
+            <section id="sign-out">
+                <div class="form">
+                    <button>sign out</button>
+            </section>
+        </div>
+    </main>
+
+    <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+            apiKey: "AIzaSyC5ize_t5L01W_Q3TZmmxTfye1Z9rOSp0E",
+            authDomain: "web-firestore-authentication.firebaseapp.com",
+            databaseURL: "https://web-firestore-authentication.firebaseio.com",
+            projectId: "web-firestore-authentication",
+            storageBucket: "web-firestore-authentication.appspot.com",
+            messagingSenderId: "954309262588",
+            appId: "1:954309262588:web:c7d23d1466067040a0ab79",
+            measurementId: "G-TY9H31DPG5"
+        };
+        // Initialize Firebase, firestore and authentication
+        firebase.initializeApp(firebaseConfig)
+        const auth = firebase.auth()
+        const db = firebase.firestore()
+    </script>
+</body>
+
+</html>
