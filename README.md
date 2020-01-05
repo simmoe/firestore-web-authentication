@@ -1,2 +1,2 @@
 # firestore-web-authentication
- A hardcoded intro to authenticastion with google firestore
+ A hardcoded intro to authentication with google firestore
