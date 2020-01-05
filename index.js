@@ -2,6 +2,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
     console.log('content loaded')
 
     const status = document.querySelector('#status p')
+    const main = document.querySelector('main')
 
     auth.onAuthStateChanged((user) => {
         console.log('auth state', user)
@@ -10,8 +11,10 @@ window.addEventListener('DOMContentLoaded', (event) => {
                 `<h4>logged in</h4>
                 <p>${user.email}</p>
                 `
+            main.classList.add('hide')
         } else {
             status.innerHTML = 'user logged out'
+            main.classList.remove('hide')
         }
     })
 

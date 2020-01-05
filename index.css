@@ -10,6 +10,21 @@ main{
     align-items:start;
 }
 
+main > #auth-sections #sign-out{
+    display:none;
+}
+
+main.hide{
+    grid-template-columns: 90vw 10vw;
+}
+
+main.hide > #auth-sections section{
+    display:none;
+}
+main.hide > #auth-sections #sign-out {
+    display:block;
+}
+
 #status{
     min-height:100%;
     background:#f4f4f8;
